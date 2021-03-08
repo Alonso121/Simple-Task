@@ -6,7 +6,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 
 function App() {
   const history = useHistory();
