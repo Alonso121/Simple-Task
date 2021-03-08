@@ -5,4 +5,4 @@ Simple Task is a simple to do app. I took the original frontend from Brad Traver
 I removed the JSON-server and made some visual modifications to the frontend.
 The app is fully functional with a server and back end.
 
-### LIVE DEMO available soon!
+### <a href="https://the-simple-task.herokuapp.com/">LIVE DEMO</a>
