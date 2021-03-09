@@ -18,9 +18,9 @@ router.get("/tasks", requireLogin, (req, res) => {
 
 // Add new Task
 router.post("/tasks", requireLogin, (req, res) => {
-  const { text, reminder, day } = req.body;
-  if (!text || !day) {
-    return res.status(422).json({ error: "Please add all fields" });
+  const { text, reminder, date, time } = req.body;
+  if (!text || !date) {
+    return res.status(422).json({ error: "Task or date missing!" });
   }
   req.user.password = undefined;
   req.user.name = undefined;
@@ -28,7 +28,8 @@ router.post("/tasks", requireLogin, (req, res) => {
   const task = new Task({
     text,
     reminder,
-    day,
+    date,
+    time,
     postedBy: req.user,
   });
   task

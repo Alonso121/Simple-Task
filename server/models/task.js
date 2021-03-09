@@ -6,9 +6,13 @@ const taskSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  day: {
+  date: {
     type: String,
     required: true,
+  },
+  time: {
+    type: String,
+    required: false,
   },
   reminder: {
     type: Boolean,

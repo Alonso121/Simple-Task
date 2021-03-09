@@ -11,18 +11,13 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 700px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 2px solid rgba(224, 139, 4, 1);
   padding: 30px;
   border-radius: 5px;
-}
-
-.title {
-  color: rgb(197, 122, 0);
-  text-transform: capitalize;
 }
 
 /*------------Navbar-------------*/
@@ -44,6 +39,7 @@ body {
 .logo {
   color: white;
   margin: 0 10px;
+  font-size: 22px;
 }
 
 .navbar ul li {
@@ -51,12 +47,15 @@ body {
   margin: 10px;
   color: white;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .nav-link {
   text-decoration: none;
   color: white;
 }
+
+/*------------Header-------------*/
 
 .header {
   display: flex;
@@ -65,11 +64,17 @@ body {
   margin-bottom: 20px;
 }
 
+.title {
+  color: rgb(197, 122, 0);
+  text-transform: capitalize;
+}
+
 hr {
   margin: 15px;
-
   color: rgba(0, 181, 0, 0.507);
 }
+
+/*------------Buttons-------------*/
 
 .btn {
   display: inline-block;
@@ -85,7 +90,7 @@ hr {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-family: inherit;
 }
 
@@ -103,8 +108,14 @@ hr {
   margin-bottom: 20px;
 }
 
+/*------------Tasks-------------*/
+
 .task {
-  background: #f4f4f4;
+  background: rgba(0, 181, 0, 0.25);
+  border-radius: 5px;
+  color: rgb(226, 88, 34);
+  font-weight: 900;
+  text-shadow: rgb(0, 0, 0);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
@@ -120,12 +131,14 @@ hr {
   justify-content: space-between;
 }
 
+/*------------New Task Form-------------*/
+
 .add-form {
   margin-bottom: 40px;
 }
 
 .form-control {
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .input-reminder {
@@ -143,27 +156,40 @@ hr {
 }
 
 .form-control input {
-  width: 100%;
+  display: block;
   height: 40px;
-  margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
 }
 
-.form-control-check {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#task-name {
+  width: 96%;
+  margin: 10px;
 }
 
-.form-control-check label {
-  flex: 1;
+.time {
+  max-width: 90%;
+  margin: 10px;
+  display: inline;
 }
 
-.form-control-check input {
-  flex: 2;
-  height: 20px;
+/*--show form--*/
+
+.hidden {
+  display: block;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
+
+.hidden.active {
+  display: block;
+  opacity: 1;
+  height: auto;
+}
+
+/*------------Footer and error info-------------*/
 
 footer {
   margin-top: 30px;

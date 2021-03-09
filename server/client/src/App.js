@@ -112,7 +112,7 @@ function App() {
         exact
         render={() => (
           <>
-            {showAddTask && <AddTask onAdd={addTask} />}
+            <AddTask showAddTask={showAddTask} onAdd={addTask} />
             {tasks ? (
               <Tasks
                 tasks={tasks}

@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ onAdd, showAddTask }) => {
   const [text, setText] = useState("");
   const [reminder, setReminder] = useState(false);
-  const [day, setDay] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("00:01");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -13,15 +14,19 @@ const AddTask = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, day, reminder });
+    onAdd({ text, date, time, reminder });
 
     setText("");
-    setDay("");
+    setDate("");
+    setTime("00:00");
     setReminder(false);
   };
 
   return (
-    <form className="add-form" onSubmit={onSubmit}>
+    <form
+      className={`add-form hidden ${showAddTask ? "active" : ""}`}
+      onSubmit={onSubmit}
+    >
       <hr />
       <div className="form-control">
         <label htmlFor="task-name">Tasks</label>
@@ -31,16 +36,25 @@ const AddTask = ({ onAdd }) => {
           placeholder="Add Task"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          required
         />
       </div>
       <div className="form-control">
-        <label htmlFor="task-time">Day & Time</label>
+        <label htmlFor="task-time">Date & Time</label>
         <input
           id="task-time"
-          type="text"
-          placeholder="Add Day & Time"
-          value={day}
-          onChange={(e) => setDay(e.target.value)}
+          className="time"
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+        <input
+          id="task-time"
+          className="time"
+          type="time"
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
         />
       </div>
       <div className="input-reminder">

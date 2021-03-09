@@ -13,7 +13,7 @@ const Task = ({ task, onDelete, onToggle}) => {
                 onClick={() => onDelete(task._id)}
                 />
             </h3>
-            <p>{task.day}</p>
+            <p>{task.date} {task.time && <span>at {task.time}</span>}</p>
         </div>
     )
 }
