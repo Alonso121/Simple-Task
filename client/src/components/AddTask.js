@@ -39,16 +39,17 @@ const AddTask = ({ onAdd, showAddTask }) => {
           required
         />
       </div>
-      <div className="form-control">
-        <label htmlFor="task-time">Date & Time</label>
+      <div className="form-control tasks-placeholder">
+        <label htmlFor="task-date">Date</label>
         <input
-          id="task-time"
+          id="task-date"
           className="time"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
         />
+        <label htmlFor="task-time">Time</label>
         <input
           id="task-time"
           className="time"
@@ -58,7 +59,7 @@ const AddTask = ({ onAdd, showAddTask }) => {
         />
       </div>
       <div className="input-reminder">
-        <label htmlFor="task-reminder">Set Reminder</label>
+        <label htmlFor="task-reminder">Mark as Important</label>
         <input
           id="task-reminder"
           type="checkbox"

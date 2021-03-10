@@ -9,7 +9,7 @@ const Header = ({ name, onAdd, showAdd, logState }) => {
       {logState && <h1 className="title">Welcome {name}!</h1>}
       {location.pathname === "/" && (
         <Button
-          color={showAdd ? "rgba(255, 0, 0, 0.9)" : "rgba(0,181,0,1)"}
+          color={showAdd ? "rgba(255, 0, 0, 0.9)" : "rgb(0, 131, 0)"}
           text={showAdd ? "Close" : "Add Task"}
           onClick={onAdd}
         />
